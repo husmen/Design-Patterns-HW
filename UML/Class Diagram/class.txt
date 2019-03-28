@@ -1,0 +1,60 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package Subscriber #DDDD00 {
+
+ class Admin{
+ +ID: String 
+ -PW: String 
+ -access_level: Int
+ -create(): void
+ -delete(): void
+ ~login(): void
+ ~logout(): void
+} 
+ class DashboardNode {
+ +topic: String 
+ +frame: Image
+ ~startSub(): void
+ ~stopSub(): void
+ ~report(): CustomStruct
+ ~screenShot(): Image
+}
+
+  Admin --o DashboardNode: have
+}
+
+package Publisher #00DDDD {
+
+
+  class Camera{
+ +ID:  Int
+ +params: CustomStruct
+ +frame: Image
+ ~start(): void
+ ~stop(): void
+}
+
+  class YOLO{
+ ~detect(frame): Image
+}
+
+  class ObjectDetector{
+ +frame:  Image
+ ~detect(frame): Image
+}
+
+  class CameraNode{
+ +topic:  String
+ ~startPub(): void
+ ~stopPub(): void
+}
+
+
+  Camera <|-- ObjectDetector: inherits
+  ObjectDetector .|> YOLO: implements
+  ObjectDetector <|-- CameraNode: inherits
+}
+
+DashboardNode "0..1" - "1..*" CameraNode
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+:Admin: as a1
+note left of a1: Security Guard.
+
+rectangle Security_System {
+(login) as uc1
+(logout) as uc2
+(monitor) as uc3
+(report) as uc4
+(screenshot) as uc5
+(start camera) as uc6
+}
+
+a1 --> uc1
+uc1 <.. uc2: <<extend>>
+uc1 --> uc6
+uc1 --> uc3
+uc3 <.. uc4: <<extend>>
+uc4 ..> uc5: <<include>>
+@enduml
