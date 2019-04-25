@@ -1,5 +1,54 @@
 @startuml
 skinparam classAttributeIconSize 0
+package Gui #DD00DD {
+ class UIFactory{
+ getLayersWindow()
+ getMainWindow()
+ getToolboxWindow()
+ }
+
+ class GtkUIFactory{
+ getLayersWindow(): GtkLayersWindow
+ getMainWindow(): GtkMainWindow
+ getToolboxWindow(): GtkToolboxWindow
+ }
+
+ class QtUIFactory{
+ getLayersWindow(): QtLayersWindow
+ getMainWindow(): QtMainWindow
+ getToolboxWindow(): QtToolboxWindow
+ }
+
+ class Window{
+ getToolkit(): String
+ getType(): String
+ }
+
+ class GtkLayersWindow{
+ }
+ class GtkMainWindow{
+ }
+ class GtkToolboxWindow{
+ }
+
+ class QtLayersWindow{
+ }
+ class QtMainWindow{
+ }
+ class QtToolboxWindow{
+ }
+
+ Window <|-- GtkLayersWindow: inherits
+ Window <|-- GtkMainWindow: inherits
+ Window <|-- GtkToolboxWindow: inherits
+ Window <|-- QtLayersWindow: inherits
+ Window <|-- QtMainWindow: inherits
+ Window <|-- QtToolboxWindow: inherits
+
+ UIFactory <|. GtkUIFactory: implements
+ UIFactory <|. QtUIFactory: implements
+}
+
 
 package Subscriber #DDDD00 {
 
@@ -21,7 +70,7 @@ package Subscriber #DDDD00 {
  ~screenShot(): Image
 }
 
-  Admin --o DashboardNode: have
+  Admin --o DashboardNode: has
 }
 
 package Publisher #00DDDD {
@@ -56,5 +105,6 @@ package Publisher #00DDDD {
   ObjectDetector <|-- CameraNode: inherits
 }
 
-DashboardNode "0..1" - "1..*" CameraNode
+DashboardNode "0..1" -- "1..*" CameraNode
+Subscriber - Gui
 @enduml
