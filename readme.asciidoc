@@ -1,7 +1,7 @@
 DP Implementation tracker
 -------------------------
 
-[options="header,footer"]
+[options="header"]
 |=======================
 |Week |Pattern            |Implemented? |Purpose
 |6    |Singleton          |[GREEN]#YES# |Only 1 admin
