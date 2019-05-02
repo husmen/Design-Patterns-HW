@@ -88,6 +88,19 @@ package Publisher #00DDDD {
  ~detect(frame): Image
 }
 
+  class DetectedObjects{
+ -list: String
+ +set(): void
+ +get(): String
+}
+  
+  class Iterator{
+ -list: String
+ -Size: int
+ -Index: int
+ __next__(): String
+}
+
   class ObjectDetector{
  +frame:  Image
  ~detect(frame): Image
@@ -103,6 +116,8 @@ package Publisher #00DDDD {
   Camera <|-- ObjectDetector: inherits
   ObjectDetector .|> YOLO: implements
   ObjectDetector <|-- CameraNode: inherits
+  ObjectDetector o-- DetectedObjects: has
+  DetectedObjects -- Iterator
 }
 
 DashboardNode "0..1" -- "1..*" CameraNode

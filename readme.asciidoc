@@ -10,6 +10,6 @@ DP Implementation tracker
 |7    |Object Pool        |[red]#NO#    |-
 |9    |Builder            |[GREEN]#YES# |Not related to project
 |9    |Abstract Factory   |[GREEN]#YES# |GUI for QT and GTK
-|10   |?                  |TODO         |-
-|10   |?                  |TODO         |-
+|10   |Iterator           |[GREEN]#YES# |Iterator for detected objects
+|11   |?                  |TODO         |-
 |=======================
