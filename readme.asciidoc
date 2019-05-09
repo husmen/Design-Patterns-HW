@@ -11,5 +11,6 @@ DP Implementation tracker
 |9    |Builder            |[GREEN]#YES# |Not related to project
 |9    |Abstract Factory   |[GREEN]#YES# |GUI for QT and GTK
 |10   |Iterator           |[GREEN]#YES# |Iterator for detected objects
-|11   |?                  |TODO         |-
+|11   |Observer           |[GREEN]#YES# |Event logging
+|12   |?                  |TODO         |-
 |=======================
