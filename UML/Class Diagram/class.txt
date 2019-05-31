@@ -115,6 +115,51 @@ package Subscriber #DDDD00 {
   Admin --o DashboardNode: has
 }
 
+package Detector #00DD00 {
+
+ class Prototype{
+ -type: String
+ -value: int
+ clone(): void
+ get_type(): void
+ get_value(): void
+}
+
+ class YOLO{
+ -type: String
+ -value: int
+ clone(): YOLO
+ }
+
+ class SSD{
+ -type: String
+ -value: int
+ clone(): SSD
+ }
+
+ class RCNN{
+ -type: String
+ -value: int
+ clone(): RCNN
+ }
+
+ class DetectorFactory{
+ ~yolo2: YOLO
+ ~yolo3: YOLO
+ ~SSD: SSD
+ ~RCNN: RCNN
+ getYOLO2(): YOLO
+ getYOLO3(): YOLO
+ getSSD(): SSD
+ getRCNN(): RCNN
+ }
+
+  Prototype <|-- YOLO: inherits
+  Prototype <|-- SSD: inherits
+  Prototype <|-- RCNN: inherits
+  Prototype <- DetectorFactory: prototype
+}
+
 package Publisher #00DDDD {
 
  class CamerasPool{
@@ -162,15 +207,15 @@ package Publisher #00DDDD {
  ~stopPub(): void
 }
 
-  Camera --o CamerasPool: has
-  CamerasPool <-- ObjectDetector: asks for camera
-  Camera <-- ObjectDetector: uses
-  ObjectDetector .|> YOLO: implements
-  ObjectDetector <|-- CameraNode: inherits
+  Camera -o CamerasPool: has
+  CamerasPool <-- CameraNode: asks for camera
+  Camera <-- CameraNode: uses
+  ObjectDetector <. CameraNode: depends
   ObjectDetector o-- DetectedObjects: has
   DetectedObjects -- Iterator
 }
 
+ObjectDetector  -> DetectorFactory: asks
 DashboardNode "0..1" -- "1..*" CameraNode
 Subscriber - Gui
 Subscriber - CoffeeMachine

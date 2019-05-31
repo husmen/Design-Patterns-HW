@@ -6,7 +6,7 @@ DP Implementation tracker
 |     |Pattern            |Implemented? |Purpose
 |1    |Singleton          |[GREEN]#YES# |Only 1 admin
 |2    |Factory            |[GREEN]#YES# |Detected objects by the camera
-|3    |Prototype          |[red]#NO#    |-
+|3    |Prototype          |[GREEN]#YES# |Implementation of different detection algorithms
 |4    |Object Pool        |[GREEN]#YES# |A Pool of Available Cameras
 |5    |Builder            |[GREEN]#YES# |Not related to project
 |6    |Abstract Factory   |[GREEN]#YES# |GUI for QT and GTK
