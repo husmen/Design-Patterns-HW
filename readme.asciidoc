@@ -3,16 +3,20 @@ DP Implementation tracker
 
 [options="header"]
 |=======================
-|Week |Pattern            |Implemented? |Purpose
-|6    |Singleton          |[GREEN]#YES# |Only 1 admin
-|6    |Factory            |[GREEN]#YES# |Detected objects by the camera
-|7    |Prototype          |[red]#NO#    |-
-|7    |Object Pool        |[GREEN]#YES# |A Pool of Available Cameras
-|9    |Builder            |[GREEN]#YES# |Not related to project
-|9    |Abstract Factory   |[GREEN]#YES# |GUI for QT and GTK
-|10   |Iterator           |[GREEN]#YES# |Iterator for detected objects
-|11   |Observer           |[GREEN]#YES# |Event logging
-|14   |Mediator           |[red]#NO#    |-
-|14   |Memento            |[red]#NO#    |-
-|15   |Decorator          |[GREEN]#YES# |Coffee ordering feature without leaving the station
+|     |Pattern            |Implemented? |Purpose
+|1    |Singleton          |[GREEN]#YES# |Only 1 admin
+|2    |Factory            |[GREEN]#YES# |Detected objects by the camera
+|3    |Prototype          |[red]#NO#    |-
+|4    |Object Pool        |[GREEN]#YES# |A Pool of Available Cameras
+|5    |Builder            |[GREEN]#YES# |Not related to project
+|6    |Abstract Factory   |[GREEN]#YES# |GUI for QT and GTK
+|7    |Iterator           |[GREEN]#YES# |Iterator for detected objects
+|8    |Observer           |[GREEN]#YES# |Event logging
+|9    |Memento            |[red]#NO#    |-
+|10   |Mediator*          |[red]#NO#    |-
+|11   |Decorator*         |[GREEN]#YES# |Coffee ordering feature without leaving the station
 |=======================
+
+* Only one of the following
+    10- Chain of Responsibility - Command - Visitor - Mediator
+    11- Adapter - Decorator - Component
