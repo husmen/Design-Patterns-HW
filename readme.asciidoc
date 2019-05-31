@@ -12,5 +12,7 @@ DP Implementation tracker
 |9    |Abstract Factory   |[GREEN]#YES# |GUI for QT and GTK
 |10   |Iterator           |[GREEN]#YES# |Iterator for detected objects
 |11   |Observer           |[GREEN]#YES# |Event logging
-|12   |?                  |TODO         |-
+|14   |Mediator           |[red]#NO#    |-
+|14   |Memento            |[red]#NO#    |-
+|15   |Decorator          |[GREEN]#YES# |Coffee ordering feature without leaving the station
 |=======================

@@ -49,6 +49,48 @@ package Gui #DD00DD {
  UIFactory <|. QtUIFactory: implements
 }
 
+package CoffeeMachine #0000DD {
+
+ class Abstract_Coffee{
+ +get_cost(): void
+ +get_ingredients(): void
+ +get_tax(): void
+}
+
+ class Concrete_Coffee{
+ +get_cost(): float
+ +get_ingredients(): String
+}
+
+ class Abstract_Coffee_Decorator{
+ +decorated_coffee
+ +get_cost(): float
+ +get_ingredients(): String
+}
+
+ class Milk{
+ +get_cost(): float
+ +get_ingredients(): String
+}
+
+ class Sugar{
+ +get_cost(): float
+ +get_ingredients(): String
+}
+
+ class Vanilla{
+ +get_cost(): float
+ +get_ingredients(): String
+}
+
+ Abstract_Coffee <|-- Abstract_Coffee_Decorator: inherits
+ Abstract_Coffee <|-- Concrete_Coffee: inherits
+ Abstract_Coffee_Decorator <|-- Milk: inherits
+ Abstract_Coffee_Decorator <|-- Sugar: inherits
+ Abstract_Coffee_Decorator <|-- Vanilla: inherits
+
+}
+
 
 package Subscriber #DDDD00 {
 
@@ -122,4 +164,5 @@ package Publisher #00DDDD {
 
 DashboardNode "0..1" -- "1..*" CameraNode
 Subscriber - Gui
+Subscriber - CoffeeMachine
 @enduml
