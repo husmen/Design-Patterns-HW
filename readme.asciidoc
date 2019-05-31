@@ -23,7 +23,8 @@
 
 == Tasarım Örüntüleri ve kullanım açıklamaları
 
-Bu projede bir güvenlik sistemi ROS kullanarak geliştirmeye çalıstım. Sistemde bir Publisher ve bir Subscriber var.
+Bu projede bir güvenlik sistemi ROS kullanarak geliştirmeye çalıstım. Sistemde bir Publisher ve bir Subscriber var. Publisher kameradan görüntü alıp üzerinde nesne tespiti yapacak, görüntü ve tespit sonucu ayrı 'topic' olarak yayınlayacak. Subscriber o mesajları alıp, bir yöneticiyi gösterecek, yönetici şüpheli bir nesne görürse onu işaretleyebilir.
+
 Proje tam olmadığı için her şey çalışmıyor (ör: GUI) ama kullandığım Örüntülerin demosu yapabilmek için yeterli kısmı bitirdim.
 Örüntüler ağşada anlatığım gibi kullandım:
 
