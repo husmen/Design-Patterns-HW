@@ -10,6 +10,7 @@ from sensor_msgs.msg import CompressedImage
 from object_pool import object_pool
 from prototype import prototype
 from iterator import iterator
+from builder import builder
 
 def publisher():
     pub_frame = rospy.Publisher('cam_frame', CompressedImage, queue_size=1)
