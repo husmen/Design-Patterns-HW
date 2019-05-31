@@ -14,9 +14,9 @@ DP Implementation tracker
 |8    |Observer           |[GREEN]#YES# |Event logging
 |9    |Memento            |[red]#NO#    |-
 |10   |Mediator*          |[red]#NO#    |-
-|11   |Decorator*         |[GREEN]#YES# |Coffee ordering feature without leaving the station
+|11   |Decorator^         |[GREEN]#YES# |Coffee ordering feature without leaving the station
 |=======================
 
-* Only one of the following
-    10- Chain of Responsibility - Command - Visitor - Mediator
-    11- Adapter - Decorator - Component
+[*] Chain of Responsibility - Command - Visitor - Mediator
+
+[^] Adapter - Decorator - Component
