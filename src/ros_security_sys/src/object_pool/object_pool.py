@@ -1,4 +1,5 @@
 import logging
+import cv2
 
 class CamerasPool:
     """
@@ -28,6 +29,7 @@ class Camera:
         self._id = id
         self._params = None
         self._frame = None
+        self.cap = cv2.VideoCapture(self._id)
         
     def get_id(self):
         return self._id
@@ -39,11 +41,9 @@ class Camera:
         pass
 
     def get_frame(self):
+        # Capture frame-by-frame
+        ret, self._frame = self.cap.read()
         return self._frame
-
-    def new_frame(self, img):
-        self._frame = img
-
 
 if __name__ == "__main__":
     cameras = CamerasPool(2)

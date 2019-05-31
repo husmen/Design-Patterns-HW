@@ -20,3 +20,9 @@ DP Implementation tracker
 [*] Chain of Responsibility - Command - Visitor - Mediator
 
 [^] Adapter - Decorator - Component
+
+
+Tasarım kalıbları ve kullanım açıklamalar
+-------------------------
+
+detaylar github'ta olacak: https://github.com/husmen/Design-Patterns-HW[link^]

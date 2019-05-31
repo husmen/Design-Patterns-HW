@@ -6,7 +6,7 @@ class Aggregate:
         self._list = None
 
     def __iter__(self):
-        return Iterator(self._list)
+        return Iterator(self._list, self)
   
     def get(self, index):
         return self._list[index]
@@ -16,7 +16,8 @@ class Aggregate:
         
 class Iterator:
     """Implements the iterator"""
-    def __init__(self, aggregate):
+    def __init__(self, aggregate, agg):
+        self._agg = agg
         self._list = aggregate
         self._size = len(aggregate)
         self._index = 0
@@ -28,7 +29,7 @@ class Iterator:
         if self._index < self._size:
             pos = self._index
             self._index += 1
-            return aggregate.get(pos)
+            return self._agg.get(pos)
         else:
             raise StopIteration()
 

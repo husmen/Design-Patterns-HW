@@ -14,6 +14,10 @@ class Prototype:
    def getValue(self):
       return self._value
 
+   def getDetections(self, img):
+      # Place holder for detection functionality, returns a list of detected objects
+      return ['person', 'bag', 'dog', 'cat', 'car']
+
 class YOLO(Prototype):
 
    def __init__(self, number):
