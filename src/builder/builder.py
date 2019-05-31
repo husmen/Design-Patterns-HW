@@ -85,7 +85,7 @@ class Body:
     shape = None
 
 
-def main():
+if __name__ == "__main__":
     jeepBuilder = JeepBuilder()  # initializing the class
 
     director = Director()
@@ -96,7 +96,3 @@ def main():
     jeep = director.getCar()
     jeep.specification()
     print("")
-
-
-if __name__ == "__main__":
-    main()
