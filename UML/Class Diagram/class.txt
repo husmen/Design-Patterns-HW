@@ -117,13 +117,21 @@ package Subscriber #DDDD00 {
 
 package Publisher #00DDDD {
 
+ class CamerasPool{
+ -reusables: Camera []
+ ~aqcuire(): Camera
+ ~release(): void
 
+}
   class Camera{
- +ID:  Int
- +params: CustomStruct
- +frame: Image
+ -ID:  Int
+ -params: CustomStruct
+ -frame: Image
  ~start(): void
  ~stop(): void
+ ~get_id(): String
+ ~new_frame(): void
+ ~get_frame(): Image
 }
 
   class YOLO{
@@ -154,8 +162,9 @@ package Publisher #00DDDD {
  ~stopPub(): void
 }
 
-
-  Camera <|-- ObjectDetector: inherits
+  Camera --o CamerasPool: has
+  CamerasPool <-- ObjectDetector: asks for camera
+  Camera <-- ObjectDetector: uses
   ObjectDetector .|> YOLO: implements
   ObjectDetector <|-- CameraNode: inherits
   ObjectDetector o-- DetectedObjects: has

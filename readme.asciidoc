@@ -7,7 +7,7 @@ DP Implementation tracker
 |6    |Singleton          |[GREEN]#YES# |Only 1 admin
 |6    |Factory            |[GREEN]#YES# |Detected objects by the camera
 |7    |Prototype          |[red]#NO#    |-
-|7    |Object Pool        |[red]#NO#    |-
+|7    |Object Pool        |[GREEN]#YES# |A Pool of Available Cameras
 |9    |Builder            |[GREEN]#YES# |Not related to project
 |9    |Abstract Factory   |[GREEN]#YES# |GUI for QT and GTK
 |10   |Iterator           |[GREEN]#YES# |Iterator for detected objects
