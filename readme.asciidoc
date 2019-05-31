@@ -1,5 +1,4 @@
-DP Implementation tracker
--------------------------
+== DP Implementation tracker
 
 [options="header"]
 |=======================
@@ -22,7 +21,56 @@ DP Implementation tracker
 [^] Adapter - Decorator - Component
 
 
-Tasarım kalıbları ve kullanım açıklamalar
--------------------------
+== Tasarım Örüntüleri ve kullanım açıklamaları
 
-detaylar github'ta olacak: https://github.com/husmen/Design-Patterns-HW[link^]
+Bu projede bir güvenlik sistemi ROS kullanarak geliştirmeye çalıstım. Sistemde bir Publisher ve bir Subscriber var.
+Proje tam olmadığı için her şey çalışmıyor (ör: GUI) ama kullandığım Örüntülerin demosu yapabilmek için yeterli kısmı bitirdim.
+Örüntüler ağşada anlatığım gibi kullandım:
+
+=== publisher.py
+publisher'de 4 örüntü ekledim:
+[source,python]
+-----------------
+from object_pool import object_pool
+from prototype import prototype
+from iterator import iterator
+from builder import builder
+-----------------
+==== object_pool
+onun yardımıyla bizim Publisher Node sadece musait kameraları bağlayabilir.
+
+==== prototype
+Nesne tespit etmek için farkla algoritmalar var (YOLO, SSD, RCNN ...), her algoritma için bir Prototype Detector var, ve kullanıcı onlardan bir ya da daha fazla seçebilir.
+
+==== iterator
+Resimdeki Nesneleri tespit ettikten sonra, onları kolay incelemek ve işleme için bir Iterator yazdım.
+
+==== builder
+builder kalıbı projeye hiç bir şekikde entegre edemedim, sadece örnek kodu ekledim.
+
+=== subscriber.py
+subscriber'de 5 örüntü ekledim
+[source,python]
+-----------------
+from singleton import singleton
+from factory import factory
+from abstract_factory import abstract_factory
+from observer import 
+from decorator_ import decorator as dec
+-----------------
+==== singleton
+Kontrol paneli için tek bir yönetici kullanabilir, onun için Singleton örüntüyü kullandım.
+
+==== factory
+Her tespit ettiğimiz bir nesne için ayrı bir 'Instance' oluşturabilmek için kullandım.
+
+==== abstract_factory
+Farklı sistemler için GUI yapabilmek için, bu örüntü kullanılabilir, mesala hem GNOME (GTK) hem de KDE (QT) destekleyebilmek için.
+
+==== observer
+Observer 2 şekilde kullandım:
+1- ROS kendi Subscriber kullanarak 2 callback fonksyonu var.
+2- bazı önemli olayları kaydedebilmek için, Observer örüntü yardımıyla bir 'Event Logger' yaptım.
+
+==== decorator
+Yönetici/ Güvenlik Üyesi onun paneli bırakmadan istediği Kahveyi sipariş verebilir.
